@@ -1,0 +1,64 @@
+html {
+  background-color: #31609c;
+  background-image: url(../images/mobi-sign-me-ups-background.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+body {
+  padding-left: 0;
+  padding-right: 0;
+  background: transparent;
+}
+.navbar {
+  height: 42px;
+}
+.navbar .navbar-inner {
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid rgba(212, 212, 212, 0);
+  border-left: none;
+  background: rgba(255, 255, 255, 0.329412);
+  height: 42px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.navbar .navbar-inner .responsive-container .brand {
+  color: #ffffff;
+}
+.navbar .navbar-inner .responsive-container .nav-collapse.collapse .nav li a {
+  color: #ffffff;
+}
+.navbar .navbar-inner .responsive-container .nav-collapse.collapse .nav li a .icon.icon-dashboard {
+  font-size: 14px;
+  height: 14px;
+  width: 14px;
+}
+.navbar .navbar-inner .responsive-container .nav-collapse.collapse .nav li a .icon.icon-cogs {
+  font-size: 14px;
+  height: 14px;
+  width: 14px;
+}
+.navbar .navbar-inner .responsive-container .nav-collapse.collapse .nav li a .icon.icon-cloud {
+  font-size: 14px;
+  height: 14px;
+  width: 14px;
+}
+.navbar .navbar-inner .responsive-container .nav-collapse.collapse .nav li a .icon.icon-user-md {
+  font-size: 14px;
+  height: 14px;
+  width: 14px;
+}
+.container-fluid .container-fluid .thumbnails {
+  padding: 20px 0px 0px 0px;
+}
+.container-fluid .container-fluid .thumbnails .span6 .thumbnail {
+  background: rgba(0, 0, 0, 0);
+  border: none;
+}
+.container-fluid .hero-unit .btns .btn-primary.btn-primary-1 {
+  background: #0088cc;
+  background-image: -moz-linear-gradient(270deg, #0088cc 0%, #0044cc 100%);
+  background-image: -webkit-linear-gradient(270deg, #0088cc 0%, #0044cc 100%);
+  background-image: -o-linear-gradient(270deg, #0088cc 0%, #0044cc 100%);
+  background-image: linear-gradient(180deg, #0088cc 0%, #0044cc 100%);
+}
