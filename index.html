@@ -5,18 +5,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Limelight|Flamenco|Federo|Yesteryear|Josefin Sans|Spinnaker|Sansita One|Handlee|Droid Sans|Oswald:400,300,700" media="screen" rel="stylesheet" type="text/css" />
-    <style>
-      /* No content under the fixed bootstrap header. */
-      body {
-        padding-top: 42px;
-      }
-    </style>
+        <link href="https://fonts.googleapis.com/css?family=Limelight|Flamenco|Federo|Yesteryear|Josefin Sans|Spinnaker|Sansita One|Handlee|Droid Sans|Oswald:400,300,700" media="screen" rel="stylesheet" type="text/css" />
     <link href="stylesheets/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="stylesheets/bootstrap-responsive.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="stylesheets/common.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="stylesheets/fontawesome.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="stylesheets/project.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="stylesheets/mobi-sign-me-ups.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/mobid.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href='stylesheets/mobi-sign-me-ups.css'media="screen" rel="stylesheet" type="text/css"/>
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
+    <script src="js/disable_bootstrap_propagation.js"></script>
+    <script src="js/signUp.js"></script>
+
     <!-- Typekit fonts require an account and a kit containing the fonts used. see https://typekit.com/plans for details. <script type="text/javascript" src="//use.typekit.net/YOUR_KIT_ID.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 -->
@@ -24,6 +27,7 @@
   </head>
   
   <body>
+
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="responsive-container">
@@ -39,26 +43,25 @@
                 <a href="#">Dashboard <i class="icon icon-dashboard"></i> 
                 </a>
               </li>
-              <li>
-                <a href="#">Settings <i class="icon icon-cogs"></i> 
-                </a>
-              </li>
-              <li>
-                <a href="#">Data <i class="icon icon-cloud"></i> 
-                </a>
-              </li>
+
               <li>
                 <a href="#">Help &amp; Feedback <i class="icon icon-user-md"></i> 
                 </a>
               </li>
-            </ul>
-            <ul class="nav nav-tabs pull-right">
-              <li>
-                <a href="#">Register</a>
-              </li>
-              <li>
-                <a href="#">Sign In</a>
-              </li>
+            
+            </ul><ul class="nav pull-right">
+                <li class="dropdown">
+                    <a id="dropdownMenu1" class="dropdown-toggle" role="button" data-toggle="dropdown">Sigaan In
+                        <strong classs="caret"></strong>
+                    </a>
+                    <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" style="padding: 15px; padding-bottom: 0px;">
+                      <input id="user_email" type="text" placeholder="Email" />
+                      <input id="user_password" type="password" placeholder="Password" />
+                      <button id="signInBtn" class="btn btn-primary" style="clear: left; width: 100%; height: 32px; font-size: 13px;" type="submit" name="commit">Sign In</button>
+                      <br />
+                      <br />
+                    </div>
+                </li>
             </ul>
           </div>
         </div>
@@ -119,6 +122,38 @@
         </div>
       </div>
     </div>
+    <script>
+        //initializing a test DB named tada
+        Parse.initialize("WGj60IjSG3BkThHlb8VpXVYGqbvaSIQ6mXh9NQEU", "LYMRAuQzkCO6xs9bikggjgEOMf1FFmpCB7hYY7Zz");
+
+        $('#signInBtn').click(function() {
+
+          var tableClass = Parse.Object.extend("Members");
+          //var tableInstance = new Parse.Query(tableClass);
+          var checkEmail = new Parse.Query("Members").equalTo("Email", $("#user_email").val());
+          //  alert(checkEmail.val());
+          //var checkIfActive = new Parse.Query("Members").equalTo("active", "Y");
+          var mainQuery = checkEmail.equalTo("active", "Y");
+          var test = $("#user_email").val();
+
+          mainQuery.find({
+
+              success: function(results) {
+                //if there is no email
+                if(results.length<1){
+                  alert("User login was not found");
+                }
+                else{
+                  //set user login with parse
+                  
+                }
+              }
+          });
+
+      });
+    </script>
+
+
   </body>
 
 </html>
