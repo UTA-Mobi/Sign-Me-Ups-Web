@@ -645,3 +645,15 @@ i {
 	margin-left: 0;
 	margin-right: 0;
 }
+
+// Classes
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Usage as mixins
+.element {
+  .center-block();
+}
